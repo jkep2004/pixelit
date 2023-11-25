@@ -393,12 +393,6 @@ class pixelit {
     link.click();
     document.querySelector("body").removeChild(link);
 
-    setTimeout(() => {
-      return new Promise((resolve) => {
-          resolve("Downloaded")
-      })
-  }, 1000)
-
   }
 
   //end class
