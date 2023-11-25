@@ -1,5 +1,6 @@
 var input = []
 for (i = 0; i < 16; i ++) {
-    input.push(`${i}.png`)
+    input.push(`assets/${i}.png`)
 }
-var pxm = new pixelit_multi (input, 16)
+
+var pxm = new pixelit_multi (input, 8)
