@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100;
+}
+
+body > div {
+    max-width: 512px;
+}
+
+body > div > * {
+    margin-inline: 1%;
+    margin-block: 1%;
+}
+
+canvas {
+    width: 512px;
+    height: 512px;
+    border: 1px black solid;
+}
