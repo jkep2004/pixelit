@@ -18,3 +18,4 @@ function open_files () {
     return output
 }
 
+var pxm = new pixelit_multi ([], [], blocksize)
