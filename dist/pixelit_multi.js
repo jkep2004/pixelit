@@ -10,12 +10,11 @@ class pixelit_multi {
     }
 
     multi () {
-        for (i = 0; i < this.imgsrc.length; i ++) {
+        for (let i = 0; i < this.imgsrc.length; i ++) {
             setTimeout(() => {
-                console.log(this.imgsrc)
                 var current_img = this.imgsrc.pop()
                 this.single(current_img)
-            }, i * 1000)
+            }, i * 500)
         }
     }
 
