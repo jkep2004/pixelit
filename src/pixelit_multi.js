@@ -1,8 +1,9 @@
 class pixelit_multi {
 
-    constructor (imgsrc = [], blocksize = 16) {
+    constructor (imgsrc = [], filenames = [], blocksize = 16) {
         
         this.imgsrc = imgsrc
+        this.filenames = filenames
         this.px = new pixelit()
 
         this.blocksize = blocksize
@@ -13,12 +14,13 @@ class pixelit_multi {
         for (let i = 0; i < this.imgsrc.length; i ++) {
             setTimeout(() => {
                 var current_img = this.imgsrc.pop()
-                this.single(current_img)
+                var filename = this.filenames.pop()
+                this.single(current_img, filename, i)
             }, i * 500)
         }
     }
 
-    single (current_img) {
+    single (current_img, filename, i) {
 
         var img = new Image ()
 
@@ -30,11 +32,11 @@ class pixelit_multi {
                 .draw()
                 .pixelate();
 
-            console.log(`Downloading ${current_img}`)
-            this.px.saveImage("px_"+current_img)
+            console.log(`px_${this.blocksize}_${filename}.png`)
+            this.px.saveImage(`px_${this.blocksize}_${filename}.png`)
 
         }
 
-}
+    }
 
 }
