@@ -383,15 +383,16 @@ class pixelit {
    * Save image from canvas
    */
 
-  saveImage() {
+  saveImage(name) {
     const link = document.createElement("a");
-    link.download = "pxArt.png";
+    link.download = name;
     link.href = this.drawto
       .toDataURL("image/png")
       .replace("image/png", "image/octet-stream");
     document.querySelector("body").appendChild(link);
     link.click();
     document.querySelector("body").removeChild(link);
+
   }
 
   //end class
